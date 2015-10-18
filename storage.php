@@ -59,7 +59,7 @@ if(isset($_POST['page']) && is_numeric($_POST['page']))
 
 	);
 
-	$itemsPerPage 	= 2;
+	$itemsPerPage 	= 3;
 	$itemsCount		= count($array);
 	$totalPages 	= ceil($itemsCount/$itemsPerPage);	
 

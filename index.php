@@ -44,7 +44,8 @@ $totalPages = 23;
 				$('#buttonsList').append(leftMost);
 
 				<?php
-					for($ctr = 1; $ctr <= 5; $ctr++)
+					$totalPages = 5;
+					for($ctr = 1; $ctr <= $totalPages; $ctr++)
 					{ 
 				?>
 						 createdButton = $('<button/>', {
@@ -89,7 +90,7 @@ $totalPages = 23;
 								type: 'POST',
 								url:  './storage.php',
 								data: {
-									'page' : <?php echo $totalPages; ?>
+									'page' : <?php echo $totalPages; ?> // change the value of this depending on the number of total data / rowPerPage
 
 								},
 								success: function(data)
@@ -97,7 +98,7 @@ $totalPages = 23;
 									if(data.status == 'ok')
 									{
 										$('#tableList').html('');
-										$.each(data.slicedData, function(index, value)
+										$.each(data.slicedData, function(index, value)//change this part to suit pssuq_table.php
 										{
 
 											$('#tableList').append('<p>'+value.Name+' '+value.Age+'</p>' );
